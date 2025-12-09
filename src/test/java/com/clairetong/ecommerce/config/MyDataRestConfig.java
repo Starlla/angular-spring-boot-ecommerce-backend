@@ -1,9 +1,6 @@
 package com.clairetong.ecommerce.config;
 
-import com.clairetong.ecommerce.entity.Country;
-import com.clairetong.ecommerce.entity.Product;
-import com.clairetong.ecommerce.entity.ProductCategory;
-import com.clairetong.ecommerce.entity.State;
+import com.clairetong.ecommerce.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +45,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(Country.class, config, theUnsupportedActions);
 
         disableHttpMethods(State.class, config, theUnsupportedActions);
+
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         // call an internal helper method
         exposeIds(config);
